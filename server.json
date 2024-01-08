@@ -1,0 +1,8 @@
+{
+    "name":"reproduce-cbstreams-ld-conflict",
+    "web":{
+        "rewrites":{
+            "enable":"true"
+        }
+    }
+}
