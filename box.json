@@ -25,10 +25,12 @@
     },
     "installPaths":{
         "coldbox":"coldbox/",
-        "testbox":"testbox/"
+        "testbox":"testbox/",
+        "cbstreams":"modules/cbstreams/"
     },
     "dependencies":{
-        "coldbox":"^7.0.0"
+        "coldbox":"^7.0.0",
+        "cbstreams":"^2.0.1+12"
     },
     "scripts":{},
     "testbox":{
