@@ -26,7 +26,7 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.Reproduct
 
 	function run(){
 
-		describe( "ReproductionService Suite", function(){
+		describe( "ReproductionService (I do the work for this example)", function(){
 
 			describe("parallelStreamExample()", function() {
 				it("should successfully process a parallel request", function() {
@@ -35,6 +35,16 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.Reproduct
 					expect( results ).toHaveLength( 5 );
 				})
 			})
+
+			describe("parallelStreamWithHTTPExample()", function() {
+				it("should successfully process parallel HTTP requests", function() {
+					var results = model.parallelStreamWithHTTPExample();
+					debug(results);
+
+					expect( false ).toBe( true, "not implemented");
+
+				})
+			});
 
 		});
 

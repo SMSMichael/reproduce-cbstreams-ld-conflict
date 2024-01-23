@@ -13,6 +13,9 @@ component accessors="true"{
 		return this;
 	}
 
+	/**
+	 * I perform a basic parallel stream example
+	 */
 	public array function parallelStreamExample() {
 		var results = new modules.cbstreams.models.Stream( [
 			"one",
@@ -39,6 +42,27 @@ component accessors="true"{
 			.map( function( item ){
 				// out.println( "**** Map (#arguments.item#) Thread Name: #createObject( "java", "java.lang.Thread" ).currentThread().getName()#" );
 				return uCase( arguments.item );
+			} )
+			.collect();
+
+			return results;
+	}
+
+	/**
+	 * I perform a basic parallel stream example
+	 */
+	public array function parallelStreamWithHTTPExample() {
+		var results = new modules.cbstreams.models.Stream( [
+			"1",
+			"2",
+			"3",
+			"4"
+		] ).parallel()
+			.map( function( item ){
+				var httpService = new models.HTTPRequestService();
+				var results = deserializeJSON(httpService.performSampleHTTPCall().fileContent);
+				return {"item": item, "payload": results[item]};
+				// out.println( "**** Map (#arguments.item#) Thread Name: #createObject( "java", "java.lang.Thread" ).currentThread().getName()#" );
 			} )
 			.collect();
 
