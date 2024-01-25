@@ -1,0 +1,14 @@
+{
+    "name":"reproduce-cbstreams-ld-conflict",
+    "app":{
+        "cfengine":"${CFML_SERVER_ENGINE:adobe@2021}"
+    },
+    "jvm":{
+        "args":[]
+    },
+    "web":{
+        "rewrites":{
+            "enable":"true"
+        }
+    }
+}
